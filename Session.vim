@@ -16,11 +16,12 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
+badd +1 src/bin
 badd +5 src/bin/day1.rs
 argglobal
 %argdel
 $argadd src/bin/day1.rs
-edit src/bin
+edit src/bin/day1.rs
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -32,11 +33,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 8 - ((7 * winheight(0) + 31) / 63)
+let s:l = 1 - ((0 * winheight(0) + 31) / 63)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 8
+keepjumps 1
 normal! 0
 lcd ~/rl
 tabnext 1
